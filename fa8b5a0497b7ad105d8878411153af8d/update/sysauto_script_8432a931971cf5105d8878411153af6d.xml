@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <can_iterate>false</can_iterate>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 08:00:00</entered_time>
+        <name>Find overdue needit task</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2023-07-28 12:10:35</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var now_date = new GlideDateTime();
+
+var gr_my = new GlideRecord('x_960166_need_it_needit');
+gr_my.addQuery('state!=3');
+gr_my.addQuery('when_needed','<=',now_date);
+gr_my.query();
+
+while(gr_my.next()){
+gs.info('Overdue needit task record :'+gr_my.number);
+	gs.eventQueue('x_960166_need_it.overdueNeedItTask',gr_my,gr_my.number,gs.getUserName(),'needit_queue');
+}]]></script>
+        <source_filter/>
+        <source_table/>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-07-28 12:46:12</sys_created_on>
+        <sys_id>8432a931971cf5105d8878411153af6d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Find overdue needit task</sys_name>
+        <sys_package display_value="Need It" source="x_960166_need_it">fa8b5a0497b7ad105d8878411153af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Need It">fa8b5a0497b7ad105d8878411153af8d</sys_scope>
+        <sys_update_name>sysauto_script_8432a931971cf5105d8878411153af6d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-07-31 06:10:43</sys_updated_on>
+        <time_zone>floating</time_zone>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

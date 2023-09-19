@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <can_iterate>false</can_iterate>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <name>Find and Close Long Overdue NeedIt Tasks</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2023-08-12 16:20:44</run_start>
+        <run_time>1970-01-01 08:05:00</run_time>
+        <run_type>daily</run_type>
+        <script><![CDATA[var when_close = gs.getProperty("autoCloseOverdue");
+
+var needit_record = new GlideRecord("x_960166_need_it_needit");
+needit_record.addQuery('when_needed','<',gs.daysAgo(when_close));
+needit_record.addQuery('state!=3');
+needit_record.query();
+
+while(needit_record.next()){
+	gs.info("Auto closed needit task record = " + needit_record.number);
+	needit_record.work_notes = "Record closed because it was too past for when needed";
+	
+	needit_record.state = 4 ;
+	needit_record.update();
+	
+	
+}]]></script>
+        <source_filter/>
+        <source_table/>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-12 16:29:22</sys_created_on>
+        <sys_id>ae4b27ea976035105d8878411153af9f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Find and Close Long Overdue NeedIt Tasks</sys_name>
+        <sys_package display_value="Need It" source="x_960166_need_it">fa8b5a0497b7ad105d8878411153af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Need It">fa8b5a0497b7ad105d8878411153af8d</sys_scope>
+        <sys_update_name>sysauto_script_ae4b27ea976035105d8878411153af9f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-12 16:29:22</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

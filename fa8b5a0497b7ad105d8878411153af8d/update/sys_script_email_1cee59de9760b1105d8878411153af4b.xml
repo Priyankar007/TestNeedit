@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>test_mail_for_red</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript(/* GlideRecord */ current, /* TemplatePrinter */ template,
+          /* Optional EmailOutbound */ email, /* Optional GlideRecord */ email_action,
+          /* Optional GlideRecord */ event) {
+
+            template.print('<p style="text-align: right; margin: 0px;">&nbsp;</p>');
+    template.print('<p style="text-align: right; margin: 0px;">&nbsp;</p>');
+    template.print('<p style="margin: 0px; text-align: center; color: #000000;">يمكنك الاطلاع على كافة تفاصيل التذكرة من خلال الدخول لنظام الدعم الفني على الرابط التالي</p>');
+    template.print('<p style="margin: 0px; text-align: center;">&nbsp;</p>');
+    template.print('<p style="margin: 0px; text-align: center;">&nbsp;</p>');
+    template.print('<p style="margin: 0px; text-align: center; color: #000000;">You can view all the ticket details by visiting the technical support portal at</p>');
+    template.print('<p style="margin: 0px; text-align: center;">&nbsp;</p>');
+    template.print('<br />');
+	
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-11 11:29:17</sys_created_on>
+        <sys_id>1cee59de9760b1105d8878411153af4b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>test_mail_for_red</sys_name>
+        <sys_package display_value="Need It" source="x_960166_need_it">fa8b5a0497b7ad105d8878411153af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Need It">fa8b5a0497b7ad105d8878411153af8d</sys_scope>
+        <sys_update_name>sys_script_email_1cee59de9760b1105d8878411153af4b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-11 11:32:31</sys_updated_on>
+    </sys_script_email>
+</record_update>

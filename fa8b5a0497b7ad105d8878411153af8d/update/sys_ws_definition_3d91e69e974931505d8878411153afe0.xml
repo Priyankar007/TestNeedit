@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_definition">
+    <sys_ws_definition action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <base_uri>/api/x_960166_need_it/needit_api</base_uri>
+        <consumes>application/json</consumes>
+        <consumes_customized>true</consumes_customized>
+        <default_version>v1</default_version>
+        <doc_link>https://dev159012.service-now.com/x_960166_need_it_needit_api_documentation.do?sysparm_use_polaris=false</doc_link>
+        <enforce_acl>cf9d01d3e73003009d6247e603f6a990</enforce_acl>
+        <is_versioned>true</is_versioned>
+        <name>Needit API</name>
+        <namespace>x_960166_need_it</namespace>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <service_id>needit_api</service_id>
+        <short_description>Provides access to the NeedIt application record data.</short_description>
+        <sys_class_name>sys_ws_definition</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-09-05 12:52:19</sys_created_on>
+        <sys_id>3d91e69e974931505d8878411153afe0</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Needit API</sys_name>
+        <sys_package display_value="Need It" source="x_960166_need_it">fa8b5a0497b7ad105d8878411153af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Need It">fa8b5a0497b7ad105d8878411153af8d</sys_scope>
+        <sys_update_name>sys_ws_definition_3d91e69e974931505d8878411153afe0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-09-06 09:22:13</sys_updated_on>
+    </sys_ws_definition>
+</record_update>

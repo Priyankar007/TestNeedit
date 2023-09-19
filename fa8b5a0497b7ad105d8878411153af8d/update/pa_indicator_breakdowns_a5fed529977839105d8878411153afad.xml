@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_indicator_breakdowns">
+    <pa_indicator_breakdowns action="INSERT_OR_UPDATE">
+        <breakdown display_value="NeedIt Requests by Month Halves">e45e19e5977839105d8878411153af09</breakdown>
+        <display>true</display>
+        <indicator display_value="NeedIt: Due Monthly">472fb789973cb5105d8878411153afb7</indicator>
+        <order>400</order>
+        <sql_statement/>
+        <sys_class_name>pa_indicator_breakdowns</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-21 13:49:23</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a5fed529977839105d8878411153afad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>NeedIt Requests by Month Halves.NeedIt: Due Monthly</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Need It" source="x_960166_need_it">fa8b5a0497b7ad105d8878411153af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Need It">fa8b5a0497b7ad105d8878411153af8d</sys_scope>
+        <sys_update_name>pa_indicator_breakdowns_a5fed529977839105d8878411153afad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-21 13:49:23</sys_updated_on>
+    </pa_indicator_breakdowns>
+</record_update>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_email">
+    <sys_script_email action="INSERT_OR_UPDATE">
+        <name>OverdueMailScript</name>
+        <new_lines_to_html>false</new_lines_to_html>
+        <script><![CDATA[(function runMailScript( /* GlideRecord */ current, /* TemplatePrinter */ template,
+    /* Optional EmailOutbound */
+    email, /* Optional GlideRecord */ email_action,
+    /* Optional GlideRecord */
+    event) {
+
+    var now_time = new GlideDateTime();
+
+    var overdue_task = new GlideRecord("x_960166_need_it_needit");
+    overdue_task.addQuery("when_needed", '<', now_time);
+    overdue_task.addQuery('state!=3');
+    overdue_task.addQuery("u_reference_2=6816f79cc0a8016401c5a33be04be441");
+    overdue_task.query();
+
+    var count = overdue_task.getRowCount();
+	if(count > 1){
+		
+		template.print("In addition to this overdue task, You have :" + (overdue_task.getRowCount() - 1) + ' ' + "more task in overdue ");
+		
+	}
+          
+       
+            
+        
+
+    
+
+
+})(current, template, email, email_action, event);]]></script>
+        <sys_class_name>sys_script_email</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-09 07:01:49</sys_created_on>
+        <sys_id>66d6cae597e875105d8878411153aff5</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>OverdueMailScript</sys_name>
+        <sys_package display_value="Need It" source="x_960166_need_it">fa8b5a0497b7ad105d8878411153af8d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Need It">fa8b5a0497b7ad105d8878411153af8d</sys_scope>
+        <sys_update_name>sys_script_email_66d6cae597e875105d8878411153aff5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-11 05:55:19</sys_updated_on>
+    </sys_script_email>
+</record_update>
